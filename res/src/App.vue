@@ -1,28 +1,49 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
-  </div>
+  <v-app>
+    <v-container class="app">
+      <div class="app__content">
+        <router-view></router-view>
+      </div>
+      <div class="app__bottom-nav">
+        <v-bottom-navigation class="d-flex align-center"
+                             v-model="bottomNav">
+          <v-btn value="encode">
+            <span>Encode</span>
+            <v-icon>mdi-history</v-icon>
+          </v-btn>
+          <v-btn value="decode">
+            <span>Decode</span>
+            <v-icon>mdi-heart</v-icon>
+          </v-btn>
+        </v-bottom-navigation>
+      </div>
+    </v-container>
+  </v-app>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
-
 export default {
-  name: "app",
-  components: {
-    HelloWorld
+  name: 'App',
+  data() {
+    return {
+      bottomNav: 'recent'
+    }
   }
 };
 </script>
 
-<style lang="scss">
-#app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+<style lang="scss" scoped>
+.app {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+
+  &__content {
+    height: 100%;
+  }
+
+  &__bottom-nav {
+  }
 }
 </style>

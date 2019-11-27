@@ -1,4 +1,4 @@
-# rqscanner
+# res
 
 ## Project setup
 ```
