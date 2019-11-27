@@ -5,7 +5,11 @@
   "description": "A sample Apache Cordova application that responds to the deviceready event.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "initialize": "cd res && npm install && npm run build:dev && cd .. && npm install && cordova prepare",
+    "emulate:browser": "cd res && npm run build:dev && cordova run browser",
+    "emulate:android": "cd res && npm run build:dev && cordova run android",
+    "emulate:device": "cd res && npm run build:dev && cordova run android --device"
   },
   "keywords": [
     "ecosystem:cordova"
