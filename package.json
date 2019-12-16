@@ -7,6 +7,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "initialize": "cd res && npm install && npm run build:dev && cd .. && npm install && cordova prepare",
+    "cordova:build": "cordova build",
     "emulate:browser": "cd res && npm run build:dev && cordova run browser",
     "emulate:android": "cd res && npm run build:dev && cordova run android",
     "emulate:device": "cd res && npm run build:dev && cordova run android --device"
@@ -17,18 +18,14 @@
   "author": "srubio131",
   "license": "Apache-2.0",
   "dependencies": {
-    "cordova-android": "^8.1.0",
-    "cordova-plugin-qr-barcode-scanner": "^8.0.3"
+    "cordova-android": "^8.1.0"
   },
   "devDependencies": {
     "cordova-plugin-whitelist": "^1.3.4"
   },
   "cordova": {
     "plugins": {
-      "cordova-plugin-whitelist": {},
-      "cordova-plugin-qr-barcode-scanner": {
-        "ANDROID_SUPPORT_V4_VERSION": "27.+"
-      }
+      "cordova-plugin-whitelist": {}
     },
     "platforms": [
       "android"

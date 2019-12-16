@@ -6,13 +6,17 @@
       </div>
       <div class="app__bottom-nav">
         <v-bottom-navigation class="d-flex align-center"
-                             v-model="bottomNav">
-          <v-btn value="encode">
-            <span>Encode</span>
-            <v-icon>mdi-history</v-icon>
-          </v-btn>
+                             v-model="bottomNav"
+                             absolute
+                             grow
+                             color="teal"
+                             @change="onNavClick">
           <v-btn value="decode">
             <span>Decode</span>
+            <v-icon>mdi-heart</v-icon>
+          </v-btn>
+          <v-btn value="encode">
+            <span>Encode</span>
             <v-icon>mdi-heart</v-icon>
           </v-btn>
         </v-bottom-navigation>
@@ -26,10 +30,16 @@ export default {
   name: 'App',
   data() {
     return {
-      bottomNav: 'recent'
+      bottomNav: 'decode'
+    }
+  },
+  methods: {
+    onNavClick() {
+      console.log(this.bottomNav)
+      this.$router.push(`/${this.bottomNav}`)
     }
   }
-};
+}
 </script>
 
 <style lang="scss" scoped>
