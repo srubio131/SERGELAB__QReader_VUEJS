@@ -1,22 +1,28 @@
 <template>
-  <div>Encode</div>
+  <div>
+    <div>
+      <v-text-field placeholder="Enter info to encrypt"
+                    outlined
+      ></v-text-field>
+      <v-btn @click="onEncryptClick">
+        Encrypt!
+      </v-btn>
+    </div>
+    <div>
+      Resultado
+    </div>
+  </div>
 </template>
 
 <script>
-import { QrcodeCapture } from 'vue-qrcode-reader'
-
 export default {
   name: 'VEncode',
-  components: {
-    QrcodeCapture
-  },
   data() {
     return {
-      bottomNav: 'recent'
     }
   },
   methods: {
-    onDecode (decodedString) {
+    onEncryptClick() {
 
     }
   }
